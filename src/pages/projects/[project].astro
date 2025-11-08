@@ -18,10 +18,10 @@ const publications = await getCollection('publications', ({ slug }) => {
 });
 ---
 <MainLayout title={entry.data.title} description={entry.data.description}>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
     <article class="md:col-span-2">
       <h1 class="project-title">{entry.data.title}</h1>
-      <div class="prose dark:prose-invert max-w-none mt-8 p-6 rounded-lg" style="background-color: var(--color-container-bg);">
+      <div class="prose dark:prose-invert max-w-none mt-8 p-6 rounded-lg prose-content" style="background-color: var(--color-container-bg);">
         <Content />
       </div>
 
