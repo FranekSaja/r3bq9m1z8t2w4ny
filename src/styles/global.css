@@ -271,3 +271,14 @@ html[data-theme='light'] {
 .prose-content li {
   margin-bottom: 0.5rem;
 }
+
+.prose-content ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose-content li {
+  margin-bottom: 0.5rem;
+}
