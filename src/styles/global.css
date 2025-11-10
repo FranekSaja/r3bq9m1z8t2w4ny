@@ -314,3 +314,8 @@ html[data-theme='light'] {
     width: 60%; /* Desktop width */
   }
 }
+
+.publication-author {
+  font-weight: 400;
+  opacity: 0.7;
+}

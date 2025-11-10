@@ -22,7 +22,7 @@ const englishPublications = publications.filter(p => p.data.lang === 'en');
       <li class="publication-item">
         <a href={path.join(baseUrl, 'publications', publication.slug)} class="publication-link">
           <div>
-            <span class="text-sm md:text-base">{publication.data.author}</span>
+            <span class="publication-author text-sm md:text-base">{publication.data.author}</span>
             <span class="text-base md:text-lg font-semibold">{publication.data.title}</span>
           </div>
           <Icon name="mdi:arrow-right" class="list-arrow-icon" />
@@ -42,7 +42,7 @@ const englishPublications = publications.filter(p => p.data.lang === 'en');
       <li class="publication-item">
         <a href={path.join(baseUrl, 'publications', publication.slug)} class="publication-link">
           <div>
-            <span class="text-sm md:text-base">{publication.data.author}</span>
+            <span class="publication-author text-sm md:text-base">{publication.data.author}</span>
             <span class="text-base md:text-lg font-semibold">{publication.data.title}</span>
           </div>
           <Icon name="mdi:arrow-right" class="list-arrow-icon" />
