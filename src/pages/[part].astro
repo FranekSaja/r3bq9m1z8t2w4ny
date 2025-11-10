@@ -17,6 +17,7 @@ if (!entry) {
 
 import H1 from '@components/mdx/H1.astro';
 import H2 from '@components/mdx/H2.astro';
+import H3 from '@components/mdx/H3.astro';
 
 const { Content } = await entry.render();
 ---
@@ -24,7 +25,7 @@ const { Content } = await entry.render();
   <div style="margin-top: 4rem;">
     <section class="space-y-6">
       <article class="prose dark:prose-invert max-w-none">
-        <Content components={{ h1: H1, h2: H2 }} />
+        <Content components={{ h1: H1, h2: H2, h3: H3 }} />
       </article>
     </section>
   </div>
