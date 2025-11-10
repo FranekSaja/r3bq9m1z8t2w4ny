@@ -282,3 +282,8 @@ html[data-theme='light'] {
 .prose-content li {
   margin-bottom: 0.5rem;
 }
+.list-arrow-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}

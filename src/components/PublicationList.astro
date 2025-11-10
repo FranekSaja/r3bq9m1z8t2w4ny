@@ -22,10 +22,10 @@ const englishPublications = publications.filter(p => p.data.lang === 'en');
       <li class="publication-item">
         <a href={path.join(baseUrl, 'publications', publication.slug)} class="publication-link">
           <div>
-            <span class="author">{publication.data.author}</span>
-            <span class="title">{publication.data.title}</span>
+            <span class="text-sm md:text-base">{publication.data.author}</span>
+            <span class="text-base md:text-lg font-semibold">{publication.data.title}</span>
           </div>
-          <Icon name="mdi:arrow-right" size={24} />
+          <Icon name="mdi:arrow-right" class="list-arrow-icon" />
         </a>
       </li>
     ))}
@@ -42,10 +42,10 @@ const englishPublications = publications.filter(p => p.data.lang === 'en');
       <li class="publication-item">
         <a href={path.join(baseUrl, 'publications', publication.slug)} class="publication-link">
           <div>
-            <span class="author">{publication.data.author}</span>
-            <span class="title">{publication.data.title}</span>
+            <span class="text-sm md:text-base">{publication.data.author}</span>
+            <span class="text-base md:text-lg font-semibold">{publication.data.title}</span>
           </div>
-          <Icon name="mdi:arrow-right" size={24} />
+          <Icon name="mdi:arrow-right" class="list-arrow-icon" />
         </a>
       </li>
     ))}
@@ -67,15 +67,6 @@ const englishPublications = publications.filter(p => p.data.lang === 'en');
   .publication-link > div {
     display: flex;
     flex-direction: column;
-  }
-  .author {
-    font-size: 1rem; /* Zwiększona czcionka */
-    font-weight: 400;
-    margin-bottom: 0.25rem;
-  }
-  .title {
-    font-size: 1.125rem;
-    font-weight: 600;
   }
 </style>
 

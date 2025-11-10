@@ -20,7 +20,7 @@ const pastProjects = projects.filter(p => p.data.status === 'past');
       <li class="project-item">
         <a href={path.join(baseUrl, 'projects', project.slug)} class="project-link">
           <span>{project.data.title}</span>
-          <Icon name="mdi:arrow-right" size={24} />
+          <Icon name="mdi:arrow-right" class="list-arrow-icon" />
         </a>
       </li>
     ))}
@@ -37,7 +37,7 @@ const pastProjects = projects.filter(p => p.data.status === 'past');
       <li class="project-item">
         <a href={path.join(baseUrl, 'projects', project.slug)} class="project-link">
           <span>{project.data.title}</span>
-          <Icon name="mdi:arrow-right" size={24} />
+          <Icon name="mdi:arrow-right" class="list-arrow-icon" />
         </a>
       </li>
     ))}
