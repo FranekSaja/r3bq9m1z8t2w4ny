@@ -5,17 +5,17 @@ import { Icon } from 'astro-icon/components';
   <input type="checkbox" class="theme-switcher__input">
   <div class="theme-switcher__track">
     <div class="theme-switcher__handle">
-      <Icon name="mdi:white-balance-sunny" class="theme-switcher__icon theme-switcher__icon--sun" size={24} />
-      <Icon name="mdi:weather-night" class="theme-switcher__icon theme-switcher__icon--moon" size={24} />
+      <Icon name="mdi:white-balance-sunny" class="theme-switcher__icon theme-switcher__icon--sun" size={16} />
+      <Icon name="mdi:weather-night" class="theme-switcher__icon theme-switcher__icon--moon" size={16} />
     </div>
   </div>
 </label>
 
 <style>
   .theme-switcher {
-    --switch-width: 80px;
-    --switch-height: 40px;
-    --handle-size: 32px;
+    --switch-width: 50px;
+    --switch-height: 25px;
+    --handle-size: 21px;
     --border-width: 2px;
     /* Obliczenie przestrzeni na ruch kulki */
     --travel-distance: calc(var(--switch-width) - var(--handle-size) - (2 * var(--border-width)));

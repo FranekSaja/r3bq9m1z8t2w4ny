@@ -53,6 +53,7 @@ const tabs = [
     </ul>
   </nav>
   <div class="themeswitcher-container">
+    <span class="themeswitcher-label">Toggle theme</span>
     <ThemeSwitcher />
   </div>
 </div>
@@ -177,21 +178,32 @@ const tabs = [
   }
 
   .themeswitcher-container {
-    position: fixed;
-    bottom: 4rem; /* Podniesiono wyżej */
-    right: calc((var(--menu-width-lg) - 80px) / 2); /* Centrowanie w menu desktopowym */
-    transition: transform 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: auto; /* Szerokość dopasuje się do zawartości */
+    padding: 0.5rem 1rem; /* Wewnętrzny padding */
+    background-color: var(--color-menu-bg); /* Użycie zmiennej CSS */
+    border-radius: 9999px; /* rounded-full */
+    border: none; /* Usunięcie ramki */
+  }
+
+  .themeswitcher-label {
+    font-size: 0.8rem;
+    color: var(--color-fg);
+    opacity: 0.7;
   }
 
   @media (max-width: 1600px) {
     .themeswitcher-container {
-      left: calc((var(--menu-width-sm) - 80px) / 2); /* Centrowanie w menu mobilnym */
-      right: auto;
-      transform: translateX(-250px); /* Ukrycie razem z menu */
-    }
-
-    .menu-container.is-open .themeswitcher-container {
-      transform: translateX(0); /* Pokazanie razem z menu */
+      justify-content: center; /* Centrowanie na mobilnym */
+      width: 100%;
+      right: 0;
+      bottom: 2rem;
     }
   }
 </style>
