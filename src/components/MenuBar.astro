@@ -53,7 +53,7 @@ const tabs = [
     </ul>
   </nav>
   <div class="themeswitcher-container">
-    <span class="themeswitcher-label">Toggle theme</span>
+    <span class="themeswitcher-label">theme</span>
     <ThemeSwitcher />
   </div>
 </div>
@@ -183,8 +183,8 @@ const tabs = [
     justify-content: flex-end;
     gap: 0.75rem;
     position: absolute;
-    bottom: 1.5rem;
-    right: 1.5rem;
+    bottom: 1rem;
+    right: 1rem;
     width: auto; /* Szerokość dopasuje się do zawartości */
     padding: 0.5rem 1rem; /* Wewnętrzny padding */
     background-color: var(--color-menu-bg); /* Użycie zmiennej CSS */
@@ -195,15 +195,15 @@ const tabs = [
   .themeswitcher-label {
     font-size: 0.8rem;
     color: var(--color-fg);
-    opacity: 0.7;
+    opacity: 0.5;
   }
 
   @media (max-width: 1600px) {
     .themeswitcher-container {
-      justify-content: center; /* Centrowanie na mobilnym */
-      width: 100%;
-      right: 0;
-      bottom: 2rem;
+      justify-content: flex-end; /* Przesunięcie do prawej */
+      width: auto; /* Szerokość auto, jak na desktopie */
+      right: 1rem; /* Ustawienie pozycji od prawej */
+      bottom: 1rem; /* Ustawienie pozycji od dołu */
     }
   }
 </style>
