@@ -326,6 +326,7 @@ html[data-theme='light'] {
   background-repeat: no-repeat;
   opacity: var(--background-opacity);
   z-index: -1;
+  backdrop-filter: blur(10px);
 }
 
 .prose h3 {
