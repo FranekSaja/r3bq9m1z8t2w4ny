@@ -12,13 +12,14 @@ const polishPublications = publications.filter(p => p.data.lang === 'pl');
 const englishPublications = publications.filter(p => p.data.lang === 'en');
 ---
 
-<h2 class="text-2xl font-bold mt-8 mb-4 flex items-center gap-2">
-  <PLIcon />
-  <span>Publikacje polskie</span>
-</h2>
-<div class="list-container">
-  <ul class="publication-list">
-    {polishPublications.map((publication) => (
+<div id="polish-publications-section">
+  <h2 class="text-2xl font-bold mt-8 mb-4 flex items-center gap-2">
+    <PLIcon />
+    <span>Publikacje polskie</span>
+  </h2>
+  <div class="list-container">
+    <ul class="publication-list">
+      {polishPublications.map((publication) => (
       <li class="publication-item">
         <a href={path.join(baseUrl, 'publications', publication.slug)} class="publication-link">
           <div>
@@ -34,16 +35,18 @@ const englishPublications = publications.filter(p => p.data.lang === 'en');
         </a>
       </li>
     ))}
-  </ul>
+    </ul>
+  </div>
 </div>
 
-<h2 class="text-2xl font-bold mt-8 mb-4 flex items-center gap-2">
-  <ENIcon />
-  <span>Publikacje angielskie</span>
-</h2>
-<div class="list-container">
-  <ul class="publication-list">
-    {englishPublications.map((publication) => (
+<div id="english-publications-section">
+  <h2 class="text-2xl font-bold mt-8 mb-4 flex items-center gap-2">
+    <ENIcon />
+    <span>Publikacje angielskie</span>
+  </h2>
+  <div class="list-container">
+    <ul class="publication-list">
+      {englishPublications.map((publication) => (
       <li class="publication-item">
         <a href={path.join(baseUrl, 'publications', publication.slug)} class="publication-link">
           <div>
@@ -59,7 +62,8 @@ const englishPublications = publications.filter(p => p.data.lang === 'en');
         </a>
       </li>
     ))}
-  </ul>
+    </ul>
+  </div>
 </div>
 
 <p id="no-results-message" class="no-results-message" style="display: none;">It's nothing here...</p>
@@ -83,8 +87,18 @@ const englishPublications = publications.filter(p => p.data.lang === 'en');
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
     const searchBar = document.getElementById('search-bar');
+    const polishSection = document.getElementById('polish-publications-section');
+    const englishSection = document.getElementById('english-publications-section');
     const publicationItems = Array.from(document.querySelectorAll('.publication-item'));
     const animations = new Map();
+
+    const updateSectionVisibility = () => {
+      const visiblePolish = polishSection.querySelectorAll('.publication-item:not(.hidden)').length;
+      const visibleEnglish = englishSection.querySelectorAll('.publication-item:not(.hidden)').length;
+
+      polishSection.style.display = visiblePolish > 0 ? '' : 'none';
+      englishSection.style.display = visibleEnglish > 0 ? '' : 'none';
+    };
 
     searchBar.addEventListener('input', (e) => {
       const searchTerm = e.target.value.toLowerCase().trim();
@@ -130,6 +144,8 @@ const englishPublications = publications.filter(p => p.data.lang === 'en');
       });
 
       Promise.all(animationPromises).then(() => {
+        updateSectionVisibility();
+
         const visibleCount = publicationItems.filter(item => !item.classList.contains('hidden')).length;
         const noResultsMessage = document.getElementById('no-results-message');
         if (noResultsMessage) {
@@ -141,5 +157,8 @@ const englishPublications = publications.filter(p => p.data.lang === 'en');
         }
       });
     });
+
+    // Initial check in case of pre-filled search bar
+    updateSectionVisibility();
   });
 </script>
