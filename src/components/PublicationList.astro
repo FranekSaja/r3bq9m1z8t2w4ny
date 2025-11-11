@@ -2,8 +2,7 @@
 import { getCollection } from 'astro:content';
 import path from 'path-browserify';
 import { Icon } from 'astro-icon/components';
-import PLIcon from './icons/PLIcon.astro';
-import ENIcon from './icons/ENIcon.astro';
+
 
 const publications = await getCollection('publications');
 const baseUrl = import.meta.env.BASE_URL;
