@@ -24,6 +24,11 @@ const englishPublications = publications.filter(p => p.data.lang === 'en');
           <div>
             <span class="publication-author text-sm md:text-base">{publication.data.author}</span>
             <span class="text-base md:text-lg font-semibold">{publication.data.title}</span>
+            <span class="hidden-data" style="display: none;">
+              {publication.data.keywords.join(' ')}
+              {publication.data.abstract}
+              {publication.data.publicationDate}
+            </span>
           </div>
           <Icon name="mdi:arrow-right" class="list-arrow-icon" />
         </a>
@@ -44,6 +49,11 @@ const englishPublications = publications.filter(p => p.data.lang === 'en');
           <div>
             <span class="publication-author text-sm md:text-base">{publication.data.author}</span>
             <span class="text-base md:text-lg font-semibold">{publication.data.title}</span>
+            <span class="hidden-data" style="display: none;">
+              {publication.data.keywords.join(' ')}
+              {publication.data.abstract}
+              {publication.data.publicationDate}
+            </span>
           </div>
           <Icon name="mdi:arrow-right" class="list-arrow-icon" />
         </a>
@@ -78,12 +88,16 @@ const englishPublications = publications.filter(p => p.data.lang === 'en');
 
     searchBar.addEventListener('input', (e) => {
       const searchTerm = e.target.value.toLowerCase().trim();
+      const searchTokens = searchTerm.split(' ').filter(token => token);
       const animationPromises = [];
 
       publicationItems.forEach(item => {
-        const title = item.querySelector('.title')?.textContent.toLowerCase().trim() || '';
-        const author = item.querySelector('.author')?.textContent.toLowerCase().trim() || '';
-        const isVisible = title.includes(searchTerm) || author.includes(searchTerm);
+        const title = item.querySelector('.font-semibold')?.textContent.toLowerCase().trim() || '';
+        const author = item.querySelector('.publication-author')?.textContent.toLowerCase().trim() || '';
+        const hiddenData = item.querySelector('.hidden-data')?.textContent.toLowerCase().trim() || '';
+        const publicationText = `${author} ${title} ${hiddenData}`;
+        
+        const isVisible = searchTokens.every(token => publicationText.includes(token));
         const isHidden = item.classList.contains('hidden');
 
         if (animations.has(item)) {
