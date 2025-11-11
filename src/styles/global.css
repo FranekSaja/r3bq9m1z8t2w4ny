@@ -14,22 +14,22 @@ html {
   --menu-color: #2a3c6b;
   --hover-color: #0c4a6e;
   --link-color: #0c4a6e;
-  --green: #10b981;
+  --green: #064e3b;
 
   --container: 72rem;
   --background-opacity: 0.02;
 }
 
 html[data-theme='light'] {
-  --primary: #f5f3f0;
-  --secondary: #fcfaf7;
-  --text: #6b4f2c;
-  --menu-color: #e9e4db;
-  --hover-color: #b58a3f;
-  --link-color: #f5e5c7;
+  --primary: #eff6ff;
+  --secondary: #ffffff;
+  --text: #172554;
+  --menu-color: #bfdbfe;
+  --hover-color: #dbeafe;
+  --link-color: #bfdbfe;
   --green: #10b981;
   
-  --background-opacity: 0.09;
+  --background-opacity: 0.05;
 }
 
 .prose img {
