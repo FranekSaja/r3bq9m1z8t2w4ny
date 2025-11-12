@@ -1,7 +1,15 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
+interface Part {
+  slug: string;
+  data: {
+    id: string;
+    title: string;
+  };
+}
+
 describe('Parts Integration Tests', () => {
-  const mockParts = [
+  const mockParts: Part[] = [
     { slug: 'inne', data: { id: 'inne', title: 'Inne' } },
     { slug: 'part-1', data: { id: 'part-1', title: 'Part 1' } },
     { slug: 'part-2', data: { id: 'part-2', title: 'Part 2' } },
@@ -19,7 +27,7 @@ describe('Parts Integration Tests', () => {
   });
 
   it('should have all parts files in content directory', async () => {
-    // Symulacja sprawdzenia plików w src/content/parts/
+    // Symulacja sprawdzenia plików w content/parts/
     const expectedFiles = ['inne.mdx', 'part-1.mdx', 'part-2.mdx', 'part-3.mdx', 'part-4.mdx', 'part-5.mdx'];
 
     // W prawdziwym teście sprawdzilibyśmy czy pliki istnieją
@@ -31,7 +39,7 @@ describe('Parts Integration Tests', () => {
     const parts = await getCollection('parts');
     const expectedSlugs = ['inne', 'part-1', 'part-2', 'part-3', 'part-4', 'part-5'];
 
-    const actualSlugs = parts.map(p => p.slug);
+    const actualSlugs = parts.map((p: Part) => p.slug);
 
     // Sprawdź czy wszystkie oczekiwane pliki są w kolekcji
     expectedSlugs.forEach(slug => {
@@ -43,7 +51,7 @@ describe('Parts Integration Tests', () => {
     const { getCollection } = await import('astro:content');
     const parts = await getCollection('parts');
 
-    parts.forEach(part => {
+    parts.forEach((part: Part) => {
       const expectedUrl = `/${part.slug}`;
       expect(expectedUrl).toMatch(/^\/part-\d+$|^\/inne$/);
     });
@@ -53,7 +61,7 @@ describe('Parts Integration Tests', () => {
     const { getCollection } = await import('astro:content');
     const parts = await getCollection('parts');
 
-    parts.forEach(part => {
+    parts.forEach((part: Part) => {
       // Sprawdź czy slug odpowiada patternowi
       const isValidSlug = /^part-\d+$/.test(part.slug) || part.slug === 'inne';
       expect(isValidSlug).toBe(true);
@@ -63,7 +71,7 @@ describe('Parts Integration Tests', () => {
   it('should have unique titles for all parts', async () => {
     const { getCollection } = await import('astro:content');
     const parts = await getCollection('parts');
-    const titles = parts.map(p => p.data.title);
+    const titles = parts.map((p: Part) => p.data.title);
     const uniqueTitles = new Set(titles);
 
     expect(titles.length).toBe(uniqueTitles.size);
