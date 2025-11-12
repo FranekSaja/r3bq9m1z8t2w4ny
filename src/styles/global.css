@@ -298,7 +298,7 @@ html[data-theme='light'] {
   font-size: 0.875rem; /* 14px */
   color: var(--text);
   padding-top: 0.25rem; /* 4px */
-  padding-left: 1.5rem; /* 24px, to align with text, not the icon */
+  padding-left: 0;
   font-weight: 400; /* Ensure description is not bold */
   line-height: 1.4;
   opacity: 0.7;
