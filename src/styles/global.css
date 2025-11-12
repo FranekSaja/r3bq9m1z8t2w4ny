@@ -12,6 +12,7 @@ html {
   --secondary: #20344f;
   --text: #FFFFFF;
   --menu-color: #2a3c6b;
+  --menu-color-alpha: #2a3c6b33;
   --hover-color: #0c4a6e;
   --link-color: #0c4a6e;
   --green: #064e3b;
@@ -25,6 +26,7 @@ html[data-theme='light'] {
   --secondary: #ffffff;
   --text: #172554;
   --menu-color: #bfdbfe;
+  --menu-color-alpha: #bfdbfe33;
   --hover-color: #dbeafe;
   --link-color: #bfdbfe;
   --green: #10b981;

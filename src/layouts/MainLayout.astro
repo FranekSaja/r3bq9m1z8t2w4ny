@@ -23,33 +23,48 @@ import MenuBar from "../components/MenuBar.astro";
   </head>
   <body class="min-h-screen antialiased">
     <div class="background-container"></div>
-    <a href="/" class="logo">Maciej Witek - Official site</a>
-    <MenuBar currentPage={Astro.url.pathname} />
+    <header class="top-bar">
+      <a href="/" class="logo">Maciej Witek - Official site</a>
+      <MenuBar currentPage={Astro.url.pathname} />
+    </header>
     <main class="main-content slide-in">
       <slot />
     </main>
     <style>
       .logo {
-        position: fixed;
-        top: 1.5rem;
-        left: 2.5rem;
+        position: static; /* Changed from fixed */
         z-index: 1999;
         font-size: 1rem;
         color: var(--text);
         text-decoration: none;
         opacity: 0.9;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        background-color: var(--primary);
+        padding: 0;
+        border-radius: 0 0.5rem 0.5rem 0;
+        background-color: transparent;
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
       }
 
+      .top-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 2000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2.5rem;
+        /* Add a background to prevent content from showing through */
+        background-color: var(--menu-color-alpha);
+      }
+
       @media (max-width: 1280px) {
         .logo {
-          left: auto;
-          right: 5rem; /* Adjust this value to position the logo next to the menu button */
-          top: 1.5rem;
+          /* No longer needs positioning overrides */
+        }
+        .top-bar {
+          padding: 1rem;
         }
       }
       
@@ -60,7 +75,8 @@ import MenuBar from "../components/MenuBar.astro";
       .main-content {
         /* Usunięto max-width i margin, aby kontener wypełniał dostępną przestrzeń */
         padding: 2.5rem;
-        padding-top: 2.5rem;
+        /* Add top padding to push content below the fixed header */
+        padding-top: 6rem;
         transition: margin-right 0.3s ease-in-out; /* Płynne przejście */
       }
 
