@@ -205,25 +205,38 @@ if (bio[0]) {
     /* margin-bottom: 0.3rem; Usunięto margines, aby wyrównać do dołu */
   }
 
-  /* --- Stylizacja obrazka tylko dla widoku desktopowego --- */
-  @media (min-width: 992px) {
+  /* --- Stylizacja obrazka zsynchronizowana z breakpointem menu --- */
+
+  /* Style dla widoku "tabletowego", gdy menu jest schowane */
+  @media (min-width: 992px) and (max-width: 1279px) {
     .image-wrapper {
-      width: 22vw;
-      height: 22vw;
-      max-width: 450px;
-      max-height: 450px;
-      min-width: 280px; /* Zwiększono min-width dla lepszego wyglądu */
-      min-height: 280px;
-    }
-    .bio-image {
-      height: 100%; /* Aby wypełnić wrapper */
-      object-fit: cover;
+      width: 28vw; /* Powiększony obrazek */
+      height: 28vw;
+      min-width: 300px;
+      min-height: 300px;
     }
   }
 
-  @media (min-width: 992px) and (max-width: 1400px) {
+  /* Style dla pełnego widoku desktopowego, gdy menu jest widoczne */
+  @media (min-width: 1280px) {
+    .image-wrapper {
+      width: 22vw; /* Standardowy rozmiar */
+      height: 22vw;
+      max-width: 450px;
+      max-height: 450px;
+      min-width: 280px;
+      min-height: 280px;
+    }
     .bio-container {
       justify-content: space-between;
+    }
+  }
+
+  /* Wspólne style dla obrazka na widokach większych niż mobilny */
+  @media (min-width: 992px) {
+    .bio-image {
+      height: 100%;
+      object-fit: cover;
     }
   }
 

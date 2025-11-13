@@ -29,4 +29,9 @@ const { Content } = await entry.render();
       </article>
     </section>
   </div>
+  <style>
+    .prose :global(h1 + *) {
+      margin-top: 3rem; /* Dodaje margines górny do pierwszego elementu po h1 */
+    }
+  </style>
 </MainLayout>
