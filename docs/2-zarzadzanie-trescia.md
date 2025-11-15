@@ -35,7 +35,7 @@ Każdy plik z treścią ma dwuczęściową budowę, która pozwala elastycznie z
 2.  Wybierz opcję **"Delete"** i potwierdź swój wybór.
 
 
-**UWAGA. Aby jaka kolwiek zmiana była widoczna na stronie, należy opublikować nową wersję kodu w repozytorium git. Instrukcja jak to zrobić, znajduje się w [Krok 4: Publikacja Zmian](docs/4-publikacja-zmian.md)**
+**UWAGA. Aby jaka kolwiek zmiana była widoczna na stronie, należy opublikować nową wersję kodu w repozytorium git. Instrukcja jak to zrobić, znajduje się w [Krok 4: Publikacja Zmian](4-publikacja-zmian.md)**
 
 ### 2.5. Automatyczne tworzenie podstron
 
