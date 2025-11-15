@@ -13,5 +13,5 @@ Witaj! Ten dokument jest spisem treści przewodnika, który pomoże Ci samodziel
 3.  **[Krok 3: Przewodnik po Plikach – Gdzie co jest?](docs/3-przewodnik-po-tresciach.md)**
     -   Mapa plików, która pomoże Ci odnaleźć i edytować konkretne sekcje strony.
 
-4.  **[Krok 4: Publikacja Zmian – Pokaż swoją pracę światu!](docs/4-publikacja-zmian.md)**
+4.  **[Krok 4: Publikacja Zmian](docs/4-publikacja-zmian.md)**
     -   Instrukcja, jak opublikować wprowadzone zmiany, aby stały się widoczne online.

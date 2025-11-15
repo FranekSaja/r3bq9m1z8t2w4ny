@@ -4,25 +4,17 @@ Cała treść Twojej strony znajduje się w plikach z rozszerzeniem `.mdx`. W ty
 
 ### 2.1. Budowa pliku `.mdx`
 
-Każdy plik z treścią składa się z dwóch części: metadanych (informacji o dokumencie) oraz treści właściwej.
+Każdy plik z treścią ma dwuczęściową budowę, która pozwala elastycznie zarządzać informacjami.
 
-**Przykładowa struktura:**
-```mdx
----
-title: "Tytuł Projektu lub Publikacji"
-description: "Krótki opis, który będzie widoczny na liście."
-type: "current"
----
+*   **Metadane (górna część):** To zestaw **kontenerów na treść** o sztywnej, z góry zdefiniowanej strukturze. Wypełniasz w nich pola takie jak `tytuł`, `data` czy `autor`. To fundament każdej podstrony.
 
-Tutaj zaczyna się właściwa treść dokumentu.
-Możesz tu swobodnie pisać, a pusta linia oddzieli akapity.
-```
+   
 
-*   **Metadane:** To informacje zawarte między `---` na górze pliku. Służą one do automatycznego budowania strony, np. tworzenia tytułów i opisów. Twoim zadaniem jest jedynie edycja wartości w cudzysłowach.
+*   **Treść właściwa (dolna część):** To przestrzeń przeznaczona na **duże bloki tekstu**, gdzie potrzebna jest większa swoboda formatowania (np. akapity, listy, nagłówki). Choć w niektórych typach treści (jak projekty czy publikacje) ta część bywa pusta, pełni ona ważną rolę i jest niezbędna do prawidłowego działania systemu.
 
-*   **Treść właściwa:** To tekst znajdujący się poniżej metadanych. Jest to główna zawartość, która pojawi się na podstronie.
+![Przykład bloku metadanych w pliku MDX](images/example-mdx-1.png)
 
-Twoja praca z treścią będzie polegała wyłącznie na edycji plików `.mdx` w folderze `src/content/`.
+![Przykład treści właściwej w pliku MDX](images/example-mdx-2.png)
 
 ### 2.2. Edycja istniejącej treści
 
@@ -32,7 +24,7 @@ Twoja praca z treścią będzie polegała wyłącznie na edycji plików `.mdx` w
 
 ### 2.3. Dodawanie nowej treści (np. projektu)
 
-1.  W panelu plików kliknij prawym przyciskiem myszy na folder, w którym chcesz umieścić nowy wpis (np. `src/content/projects`).
+1.  W panelu plików kliknij prawym przyciskiem myszy na folder, w którym chcesz umieścić nowy wpis (np. `content/projects`).
 2.  Wybierz opcję **"New File"**.
 3.  Nadaj plikowi prostą nazwę, używając małych liter i myślników zamiast spacji (np. `nowy-projekt-badawczy.mdx`). Pamiętaj o rozszerzeniu `.mdx`.
 4.  Aby zachować spójną strukturę, skopiuj zawartość z innego, istniejącego pliku i dostosuj ją do swoich potrzeb.
@@ -41,6 +33,9 @@ Twoja praca z treścią będzie polegała wyłącznie na edycji plików `.mdx` w
 
 1.  W panelu plików kliknij prawym przyciskiem myszy na plik, który chcesz usunąć.
 2.  Wybierz opcję **"Delete"** i potwierdź swój wybór.
+
+
+**UWAGA. Aby jaka kolwiek zmiana była widoczna na stronie, należy opublikować nową wersję kodu w repozytorium git. Instrukcja jak to zrobić, znajduje się w [Krok 4: Publikacja Zmian](docs/4-publikacja-zmian.md)**
 
 ### 2.5. Automatyczne tworzenie podstron
 
