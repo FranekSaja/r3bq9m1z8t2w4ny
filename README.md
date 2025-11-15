@@ -1,47 +1,17 @@
-# Maciej Witek — Strona w Astro
+# Dokumentacja dla Użytkownika
 
-Szkielet projektu Astro z Tailwind 4, MDX, sitemap i Content Collections.
+Witaj! Ten dokument jest spisem treści przewodnika, który pomoże Ci samodzielnie zarządzać treścią na Twojej stronie internetowej. Każdy krok został opisany w osobnym pliku, aby nawigacja była jak najprostsza.
 
-## Wymagania
-- Node.js >= 20.3 (zalecane >= 22)
-- pnpm >= 8 (zalecane) lub npm >= 9
+## Spis Treści
 
-## Instalacja
-```sh
-pnpm install
-```
+1.  **[Krok 1: Pakiet Startowy – Przygotowanie komputera](docs/1-pakiet-startowy.md)**
+    -   Ten rozdział wyjaśnia, jak jednorazowo skonfigurować komputer do pracy nad stroną.
 
-## Development
-```sh
-pnpm dev
-```
-Aplikacja domyślnie uruchomi się na http://localhost:4321/
+2.  **[Krok 2: Zarządzanie Treścią – Twoje centrum dowodzenia](docs/2-zarzadzanie-trescia.md)**
+    -   Dowiedz się, jak edytować, dodawać i usuwać treści na stronie.
 
-## Build
-```sh
-pnpm build
-pnpm preview
-```
-Wynik budowania znajdziesz w katalogu `dist/`.
+3.  **[Krok 3: Przewodnik po Plikach – Gdzie co jest?](docs/3-przewodnik-po-tresciach.md)**
+    -   Mapa plików, która pomoże Ci odnaleźć i edytować konkretne sekcje strony.
 
-## Pliki i katalogi
-- `astro.config.mjs` — konfiguracja Astro (ustaw docelowe `site`).
-- `tsconfig.json` — TypeScript + aliasy `@components/*`, `@layouts/*`.
-- `src/content.config.ts` — Content Collections: `bio`, `publications` (Zod).
-- `src/pages/` — strony (`index.astro`, `404.astro`).
-- `src/layouts/MainLayout.astro` — główny layout + meta/OG.
-- `src/styles/global.css` — Tailwind 4 przez `@tailwindcss/vite`.
-- `public/` — statyczne pliki (`favicon.svg`, `robots.txt`).
-
-## Treści
-- Edytuj `src/content/bio/index.md` (frontmatter: `name`, `title`, opcjonalnie `email`).
-- Dodawaj publikacje w `src/content/publications/*.md` (`title`, `year`, `authors[]`, `link`).
-
-## Uwaga dot. lint/typów
-- Błędy typu „module not found” z `astro:content`/`astro/loaders` znikną po instalacji zależności i uruchomieniu `astro dev`.
-- Reguła `@theme` w `src/styles/global.css` jest częścią Tailwind 4 — działa z wtyczką `@tailwindcss/vite` (może być podświetlana jako ostrzeżenie przez edytor do czasu uruchomienia Vite).
-
-## Dostosuj
-- Zmień `site` i `base` w `astro.config.mjs` pod docelowy hosting (Netlify/Vercel/GitHub Pages).
-- Jeśli wdrożysz na GitHub Pages w podkatalogu, ustaw `base: "/nazwa-repo"`.
-- Jeśli chcesz RSS lub dodatkowe integracje, zobacz sekcję „RSS” i „SEO” w `/.windsurf/rules.md`.
+4.  **[Krok 4: Publikacja Zmian – Pokaż swoją pracę światu!](docs/4-publikacja-zmian.md)**
+    -   Instrukcja, jak opublikować wprowadzone zmiany, aby stały się widoczne online.
