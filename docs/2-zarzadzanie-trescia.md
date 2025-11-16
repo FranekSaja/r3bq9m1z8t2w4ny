@@ -1,4 +1,4 @@
-# Krok 2: Jak zarządzać treścią?
+# Krok 2: Jak zarządzać plikami?
 
 Cała treść Twojej strony znajduje się w plikach z rozszerzeniem `.mdx`. W tym rozdziale dowiesz się, jak je edytować, dodawać i usuwać.
 

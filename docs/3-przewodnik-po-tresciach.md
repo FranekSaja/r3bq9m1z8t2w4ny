@@ -41,7 +41,11 @@ Oto lista najważniejszych miejsc, w których znajdziesz pliki do edycji:
 
 Każdy rodzaj treści (biografia, projekt, publikacja) posiada własny, ściśle zdefiniowany zestaw metadanych. Jest to kluczowe dla spójności i poprawnego działania strony. Poniżej znajdziesz szczegółowy opis wymaganych i opcjonalnych pól dla każdej sekcji. Kolejność podawania metadanych w pliku nie ma znaczenia
 
-**Ważne:** System automatycznie weryfikuje poprawność metadanych. Jeśli pominiesz wymagane pole, podasz je z błędem lub dodasz pole, które nie jest zdefiniowane w konfiguracji, strona nie zostanie opublikowana, a w interfejsie GitHub Desktop lub na stronie GitHub zobaczysz komunikat o błędzie.
+**Ważne:** System automatycznie weryfikuje poprawność metadanych. Jeśli pominiesz wymagane pole, podasz je z błędem lub dodasz pole, które nie jest zdefiniowane w konfiguracji, strona nie zostanie opublikowana, a w interfejsie repozytorium na GitHub  zobaczysz komunikat o błędzie.
+
+![Przykład błędu budowy strony w GitHub](images/github-build-error.png)
+
+Więcej o procesie publikacji strony i obsłudze błędów znajdziesz w [Krok 4: Publikacja Zmian](4-publikacja-zmian.md)
 
 ---
 
