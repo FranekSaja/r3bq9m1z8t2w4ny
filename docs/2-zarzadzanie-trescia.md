@@ -20,7 +20,7 @@ Każdy plik z treścią ma dwuczęściową budowę, która pozwala elastycznie z
 
 1.  W panelu plików po lewej stronie VS Code znajdź katalog `content` i otwórz plik, który chcesz zmodyfikować.
 ![Widok folderu content](images/content-folder.png)
-2.  Wprowadź potrzebne zmiany w tekście.
+2.  Wprowadź potrzebne zmiany w tekście. Konkretna instrukcja jak poprawnie edytować plik `.mdx`, tak aby nie wygenerować błędu jest w [Krok 3](3-przewodnik-po-tresciach.md)
 3.  Zapisz plik za pomocą skrótu `Ctrl + S` (Windows) lub `Cmd + S` (macOS).
 
 ### 2.3. Dodawanie nowej treści (np. projektu)
@@ -28,7 +28,7 @@ Każdy plik z treścią ma dwuczęściową budowę, która pozwala elastycznie z
 1.  W panelu plików kliknij prawym przyciskiem myszy na folder, w którym chcesz umieścić nowy wpis (np. `content/projects`).
 2.  Wybierz opcję **"New File"**.
 3.  Nadaj plikowi prostą nazwę, używając małych liter i myślników zamiast spacji (np. `nowy-projekt-badawczy.mdx`). Pamiętaj o rozszerzeniu `.mdx`.
-4.  Aby zachować spójną strukturę, skopiuj zawartość z innego, istniejącego pliku i dostosuj ją do swoich potrzeb.
+4.  Aby zachować spójną strukturę, skopiuj zawartość z innego, istniejącego pliku i dostosuj ją do swoich potrzeb. Konkretna instrukcja jak poprawnie tworzyć plik `.mdx`, tak aby nie wygenerować błędu jest w [Krok 3](3-przewodnik-po-tresciach.md)
 
 ### 2.4. Usuwanie treści
 
