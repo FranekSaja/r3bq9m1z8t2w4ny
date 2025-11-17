@@ -85,3 +85,19 @@ Aby dowiedzieć się więcej o przyczynie błędu, kliknij w szczegóły (czerwo
 
 ![Przykład błędu w logach z budowania strony](images/error2.png)
 ![Przykład błędu w logach z budowania strony](images/error1.png)
+
+### Co zrobić z błędem?
+
+Gdy zobaczysz błąd, pierwszym krokiem jest zrozumienie, co go spowodowało.
+
+1.  Na stronie głównej projektu w GitHub kliknij na tytuł ostatniego commita (po lewej stronie czerwonego krzyżyka).
+
+    ![Link do szczegółów commita](images/github-build-error.png)
+
+2.  Otworzy się podsumowanie zmian wprowadzonych w tym commicie. Zobaczysz tam:
+    -   **Na czerwono**: Linie, które zostały usunięte.
+    -   **Na zielono**: Linie, które zostały dodane.
+
+    ![Podsumowanie zmian w commicie](images/changes-summary-screen.png)
+
+W powyższym przykładzie widać, że błąd polegał na **usunięciu obowiązkowych pól** (`title`, `abstract`) i **dodaniu jednego, nieistniejącego pola** (`example`). Taka zmiana w metadanych sprawiła, że strona nie mogła się poprawnie zbudować.
