@@ -11,18 +11,26 @@ Gdy wprowadzisz już wszystkie zmiany i zapiszesz pliki, ostatnim krokiem jest i
 
 ![Panel kontroli wersji w VS Code](images/source-control-panel.png)
 
-### 4.2. Opisz i zatwierdź zmiany (Commit)
+### 4.2. Przygotuj zmiany do zatwierdzenia (Stage Changes)
 
-Teraz należy zapisać Twoje zmiany w postaci "paczki" z krótkim opisem.
+Zanim zatwierdzisz zmiany, musisz wskazać, które z nich chcesz zapisać w "paczce". Ten proces nazywa się "stagingiem".
+
+1.  Najedź kursorem na plik, który chcesz zatwierdzić.
+2.  Kliknij ikonę **"+"** (plus), która pojawi się obok nazwy pliku.
+3.  Plik zostanie przeniesiony do sekcji **"Staged Changes"**. Oznacza to, że jest gotowy do zatwierdzenia.
+
+![Przygotowywanie zmian do zatwierdzenia](images/staged-changes.png)
+
+### 4.3. Opisz i zatwierdź zmiany (Commit)
+
+Teraz, gdy zmiany są już przygotowane, możesz je ostatecznie zatwierdzić.
 
 1.  W polu tekstowym **"Message"** wpisz krótko, co zostało zmienione, np. "Dodanie nowego projektu" lub "Poprawki w biografii".
 2.  Kliknij przycisk **"Commit"**.
 
-![Wpisywanie wiadomości i zatwierdzanie zmian](images/git-commit-window.png)
+![Wpisywanie wiadomości i zatwierdzanie zmian](images/staged-changes.png)
 
-*Wskazówka: Jeśli program zapyta Cię o "staging" zmian, wybierz "Yes". To standardowy element procesu, którym nie musisz się przejmować.*
-
-### 4.3. Zsynchronizuj zmiany z serwerem (Sync Changes)
+### 4.4. Zsynchronizuj zmiany z serwerem (Sync Changes)
 
 Ostatni etap to wysłanie przygotowanej "paczki" na serwer.
 

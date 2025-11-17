@@ -1,4 +1,4 @@
-# Krok 1: Przygotowanie do pracy
+# Krok 1: Przygotowanie do pracy.
 
 Witaj! Ten rozdział pomoże Ci jednorazowo skonfigurować komputer, abyś mógł swobodnie edytować treść strony.
 
