@@ -1,13 +1,15 @@
 # Krok 4: Jak opublikować zmiany?
 
-Gdy wprowadzisz już wszystkie zmiany i zapiszesz pliki, ostatnim krokiem jest ich publikacja. Dzięki temu staną się widoczne na publicznej stronie internetowej. Cały proces przeprowadzisz wygodnie wewnątrz VS Code.
+Gdy wprowadzisz już wszystkie zmiany i zapiszesz pliki, ostatnim krokiem jest ich publikacja. Dzięki temu staną się widoczne na publicznej stronie internetowej. Cały proces przeprowadzisz wygodnie wewnątrz VS Code. 
+
+**Ta instrukcja zakłada, że konfiguracja Git i GitHub została przeprowadzona poprawnie. Patrz [Krok 1: Pakiet Startowy](1-pakiet-startowy.md).**
 
 ### 4.1. Przejdź do panelu kontroli wersji
 
 1.  W panelu po lewej stronie okna VS Code kliknij ikonę przedstawiającą rozgałęzienie (trzecia od góry).
 2.  Otworzy się panel **"Source Control"**, w którym zobaczysz listę wszystkich zmodyfikowanych przez Ciebie plików.
 
-![Panel kontroli wersji w VS Code](images/vs-code-app-screen.png)
+![Panel kontroli wersji w VS Code](images/source-control-panel.png)
 
 ### 4.2. Opisz i zatwierdź zmiany (Commit)
 
