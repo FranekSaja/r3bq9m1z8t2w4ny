@@ -27,7 +27,7 @@ Każdy plik z treścią ma dwuczęściową budowę, która pozwala elastycznie z
 
 1.  W panelu plików kliknij prawym przyciskiem myszy na folder, w którym chcesz umieścić nowy wpis (np. `content/projects`).
 2.  Wybierz opcję **"New File"**.
-3.  Nadaj plikowi prostą nazwę, używając małych liter i myślników zamiast spacji (np. `nowy-projekt-badawczy.mdx`). Pamiętaj o rozszerzeniu `.mdx`.
+3.  Nadaj plikowi prostą nazwę, używając małych liter i myślników zamiast spacji (np. `nowy-projekt-badawczy.mdx`). Pamiętaj o rozszerzeniu `.mdx`. **Nazwa pliku jest kluczowa, ponieważ posłuży jako adres URL nowej podstrony.**
 4.  Aby zachować spójną strukturę, skopiuj zawartość z innego, istniejącego pliku i dostosuj ją do swoich potrzeb. Konkretna instrukcja jak poprawnie tworzyć plik `.mdx`, tak aby nie wygenerować błędu jest w [Krok 3](3-przewodnik-po-tresciach.md)
 
 ### 2.4. Usuwanie treści

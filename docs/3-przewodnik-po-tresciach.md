@@ -17,6 +17,8 @@ type: "current"
 
 Prawidłowe i spójne wypełnianie metadanych jest ważne dla właściwego działania strony. Jeżeli w składni tego zapisu pojawi się błąd, strona nie zbuduje się prawidłowo
 
+**Równie ważne jest przemyślane nazywanie plików `.mdx`**. Nazwa pliku (np. `moj-nowy-projekt.mdx`) jest automatycznie przekształcana na adres URL podstrony (np. `twojadomena.com/projects/moj-nowy-projekt`). Dlatego używaj nazw, które są krótkie, czytelne i trafnie opisują zawartość – wpłynie to pozytywnie na nawigację i SEO.
+
 ### 3.2. Lokalizacja plików
 
 Oto lista najważniejszych miejsc, w których znajdziesz pliki do edycji:
