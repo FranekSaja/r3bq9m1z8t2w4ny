@@ -9,7 +9,7 @@ Witaj! Ten dokument jest spisem treści przewodnika, który pomoże Ci samodziel
     -   Ten rozdział wyjaśnia, jak jednorazowo skonfigurować komputer do pracy nad stroną.
 
 2.  **[Krok 2: Zarządzanie plikami](docs/2-zarzadzanie-trescia.md)**
-    -   Dowiedz się, jak dodawać i usuwać treści na stronie.
+    -   Dowiedz się, jak dodawać i usuwać pliki w kodzie oraz jak dodawać i usuwać projekty i publikacje
 
 3.  **[Krok 3: Przewodnik po plikach – Gdzie co jest i jak to edytować?](docs/3-przewodnik-po-tresciach.md)**
     -   Mapa plików, która pomoże Ci odnaleźć i poprawnie edytować konkretne sekcje strony.
