@@ -1,72 +1,93 @@
 ---
-import { getCollection } from 'astro:content';
-import path from 'path-browserify';
-import { Icon } from 'astro-icon/components';
+import { getCollection } from "astro:content";
+import path from "path-browserify";
+import { Icon } from "astro-icon/components";
 
-
-const publications = await getCollection('publications');
+const publications = await getCollection("publications");
 const baseUrl = import.meta.env.BASE_URL;
 
-const polishPublications = publications.filter(p => p.data.lang === 'pl');
-const englishPublications = publications.filter(p => p.data.lang === 'en');
+const polishPublications = publications.filter((p) => p.data.lang === "pl");
+const englishPublications = publications.filter((p) => p.data.lang === "en");
 ---
 
 <div class="relative-container">
   <div id="publications-wrapper">
-    <div id="polish-publications-section">
+    <div id="english-publications-section">
       <h2 class="text-2xl font-bold mt-8 mb-4 flex items-center gap-2">
-        <span>Publikacje polskie</span>
+        <span>Papers in English</span>
       </h2>
       <div class="list-container">
         <ul class="publication-list not-prose">
-          {polishPublications.map((publication) => (
-          <li class="publication-item">
-            <a href={path.join(baseUrl, 'publications', publication.slug)} class="publication-link">
-              <div>
-                <span class="publication-author text-sm md:text-base">{publication.data.author}</span>
-                <span class="text-base md:text-lg font-semibold">{publication.data.title}</span>
-                <span class="hidden-data" style="display: none;">
-                  {publication.data.keywords.join(' ')}
-                  {publication.data.abstract}
-                  {publication.data.publicationDate}
-                </span>
-              </div>
-              <Icon name="mdi:arrow-right" class="list-arrow-icon" />
-            </a>
-          </li>
-        ))}
+          {
+            englishPublications.map((publication) => (
+              <li class="publication-item">
+                <a
+                  href={path.join(baseUrl, "publications", publication.slug)}
+                  class="publication-link"
+                >
+                  <div>
+                    <span class="publication-author text-sm md:text-base">
+                      {publication.data.author}
+                    </span>
+                    <span class="text-base md:text-lg font-semibold">
+                      {publication.data.title}
+                    </span>
+                    <span class="hidden-data" style="display: none;">
+                      {publication.data.keywords.join(" ")}
+                      {publication.data.abstract}
+                      {publication.data.publicationDate}
+                    </span>
+                  </div>
+                  <Icon name="mdi:arrow-right" class="list-arrow-icon" />
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </div>
 
-    <div id="english-publications-section">
+    <div id="polish-publications-section">
       <h2 class="text-2xl font-bold mt-8 mb-4 flex items-center gap-2">
-        <span>Publikacje angielskie</span>
+        <span>Papers in Polish</span>
       </h2>
       <div class="list-container">
         <ul class="publication-list not-prose">
-          {englishPublications.map((publication) => (
-          <li class="publication-item">
-            <a href={path.join(baseUrl, 'publications', publication.slug)} class="publication-link">
-              <div>
-                <span class="publication-author text-sm md:text-base">{publication.data.author}</span>
-                <span class="text-base md:text-lg font-semibold">{publication.data.title}</span>
-                <span class="hidden-data" style="display: none;">
-                  {publication.data.keywords.join(' ')}
-                  {publication.data.abstract}
-                  {publication.data.publicationDate}
-                </span>
-              </div>
-              <Icon name="mdi:arrow-right" class="list-arrow-icon" />
-            </a>
-          </li>
-        ))}
+          {
+            polishPublications.map((publication) => (
+              <li class="publication-item">
+                <a
+                  href={path.join(baseUrl, "publications", publication.slug)}
+                  class="publication-link"
+                >
+                  <div>
+                    <span class="publication-author text-sm md:text-base">
+                      {publication.data.author}
+                    </span>
+                    <span class="text-base md:text-lg font-semibold">
+                      {publication.data.title}
+                    </span>
+                    <span class="hidden-data" style="display: none;">
+                      {publication.data.keywords.join(" ")}
+                      {publication.data.abstract}
+                      {publication.data.publicationDate}
+                    </span>
+                  </div>
+                  <Icon name="mdi:arrow-right" class="list-arrow-icon" />
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </div>
   </div>
 
-  <div id="no-results-message" class="no-results-message" style="display: none;">
+  <div
+    id="no-results-message"
+    class="no-results-message"
+    style="display: none;"
+  >
     <Icon name="mdi:magnify-close" class="no-results-icon" />
     <p>It's nothing here...</p>
   </div>
@@ -104,57 +125,81 @@ const englishPublications = publications.filter(p => p.data.lang === 'en');
 </style>
 
 <script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    const searchBar = document.getElementById('search-bar');
-    const noResultsMessage = document.getElementById('no-results-message');
-    const polishSection = document.getElementById('polish-publications-section');
-    const englishSection = document.getElementById('english-publications-section');
-    const publicationItems = Array.from(document.querySelectorAll('.publication-item'));
+  document.addEventListener("DOMContentLoaded", () => {
+    const searchBar = document.getElementById("search-bar");
+    const noResultsMessage = document.getElementById("no-results-message");
+    const polishSection = document.getElementById(
+      "polish-publications-section"
+    );
+    const englishSection = document.getElementById(
+      "english-publications-section"
+    );
+    const publicationItems = Array.from(
+      document.querySelectorAll(".publication-item")
+    );
     const animations = new Map();
 
     const updateSectionVisibility = () => {
-      const visiblePolish = polishSection.querySelectorAll('.publication-item:not(.hidden)').length;
-      const visibleEnglish = englishSection.querySelectorAll('.publication-item:not(.hidden)').length;
+      const visiblePolish = polishSection.querySelectorAll(
+        ".publication-item:not(.hidden)"
+      ).length;
+      const visibleEnglish = englishSection.querySelectorAll(
+        ".publication-item:not(.hidden)"
+      ).length;
 
-      polishSection.style.display = visiblePolish > 0 ? '' : 'none';
-      englishSection.style.display = visibleEnglish > 0 ? '' : 'none';
+      polishSection.style.display = visiblePolish > 0 ? "" : "none";
+      englishSection.style.display = visibleEnglish > 0 ? "" : "none";
     };
 
-    searchBar.addEventListener('input', (e) => {
+    searchBar.addEventListener("input", (e) => {
       const searchTerm = e.target.value.toLowerCase().trim();
-      const searchTokens = searchTerm.split(' ').filter(token => token);
+      const searchTokens = searchTerm.split(" ").filter((token) => token);
       const animationPromises = [];
 
-      publicationItems.forEach(item => {
-        const title = item.querySelector('.font-semibold')?.textContent.toLowerCase().trim() || '';
-        const author = item.querySelector('.publication-author')?.textContent.toLowerCase().trim() || '';
-        const hiddenData = item.querySelector('.hidden-data')?.textContent.toLowerCase().trim() || '';
+      publicationItems.forEach((item) => {
+        const title =
+          item
+            .querySelector(".font-semibold")
+            ?.textContent.toLowerCase()
+            .trim() || "";
+        const author =
+          item
+            .querySelector(".publication-author")
+            ?.textContent.toLowerCase()
+            .trim() || "";
+        const hiddenData =
+          item
+            .querySelector(".hidden-data")
+            ?.textContent.toLowerCase()
+            .trim() || "";
         const publicationText = `${author} ${title} ${hiddenData}`;
-        
-        const isVisible = searchTokens.every(token => publicationText.includes(token));
-        const isHidden = item.classList.contains('hidden');
+
+        const isVisible = searchTokens.every((token) =>
+          publicationText.includes(token)
+        );
+        const isHidden = item.classList.contains("hidden");
 
         if (animations.has(item)) {
           animations.get(item).cancel();
         }
 
         if (isVisible && isHidden) {
-          item.classList.remove('hidden');
-          const animation = item.animate([
-            { opacity: 0 },
-            { opacity: 1 }
-          ], { duration: 300, easing: 'ease-out' });
+          item.classList.remove("hidden");
+          const animation = item.animate([{ opacity: 0 }, { opacity: 1 }], {
+            duration: 300,
+            easing: "ease-out",
+          });
           animations.set(item, animation);
         } else if (!isVisible && !isHidden) {
-          const animation = item.animate([
-            { opacity: 1 },
-            { opacity: 0 }
-          ], { duration: 300, easing: 'ease-in' });
+          const animation = item.animate([{ opacity: 1 }, { opacity: 0 }], {
+            duration: 300,
+            easing: "ease-in",
+          });
           animations.set(item, animation);
-          
-          const promise = new Promise(resolve => {
+
+          const promise = new Promise((resolve) => {
             animation.onfinish = () => {
-              item.classList.add('hidden');
+              item.classList.add("hidden");
               animations.delete(item);
               resolve(null);
             };
@@ -165,14 +210,16 @@ const englishPublications = publications.filter(p => p.data.lang === 'en');
 
       Promise.all(animationPromises).then(() => {
         updateSectionVisibility();
-        const visibleCount = publicationItems.filter(item => !item.classList.contains('hidden')).length;
-        
+        const visibleCount = publicationItems.filter(
+          (item) => !item.classList.contains("hidden")
+        ).length;
+
         if (visibleCount === 0 && searchTerm) {
           // publicationsWrapper.style.display = 'none'; // This is now handled by updateSectionVisibility
-          noResultsMessage.style.display = 'flex';
+          noResultsMessage.style.display = "flex";
         } else {
           // publicationsWrapper.style.display = ''; // This is now handled by updateSectionVisibility
-          noResultsMessage.style.display = 'none';
+          noResultsMessage.style.display = "none";
         }
       });
     });
