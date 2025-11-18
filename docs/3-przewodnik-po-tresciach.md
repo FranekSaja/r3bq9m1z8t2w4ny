@@ -135,3 +135,95 @@ Aby zobaczyć, jak wszystkie te elementy łączą się w całość, spójrz na p
 Przykład poprawnie wprowadzonych metadanych na podstawie pliku w `content/projects`:
 
 ![Przykład metadanych w pliku MDX](images/right-metadata-insert.png)
+
+### 3.5. Formatowanie treści i Komponenty Astro
+
+#### Formatowanie treści w plikach .mdx
+
+W plikach `.mdx`, w których nie użyto specjalnych **komponentów Astro** (Poznasz je po zielonym kolorze tekstu), możesz swobodnie pisać i formatować tekst pod sekcją z metadanymi. Działa to podobnie do edytora tekstu – możesz używać nagłówków, list, pogrubienia itp.
+
+**Uwaga:** Chociaż system nie zgłosi błędu, jeśli wprowadzisz tekst w sposób nieustrukturyzowany, może to negatywnie wpłynąć na wygląd strony. Aby mieć pewność, że treść będzie wyświetlać się poprawnie, warto trzymać się standardowych zasad formatowania.
+
+> Więcej o tym, jak formatować tekst (np. tworzyć nagłówki, listy, wstawiać linki), dowiesz się na stronie: [https://www.markdownguide.org](https://www.markdownguide.org).
+
+#### Czym są Komponenty Astro?
+
+Komponenty Astro to reużywalne fragmenty strony, które pełnią określone funkcje. Zamiast tworzyć od zera np. listę projektów, używamy gotowego komponentu, który automatycznie pobiera dane i wyświetla je w odpowiedni sposób. Upraszcza to zarządzanie treścią i zapewnia spójny wygląd strony.
+
+W niektórych plikach `.mdx` używamy tych komponentów do automatycznego generowania treści. Oznacza to, że nie piszesz w nich bezpośrednio tekstu, a jedynie wstawiasz odpowiedni komponent.
+
+#### Pliki `.mdx` używające komponentów Astro
+
+Poniższe pliki zamiast standardowego tekstu, wykorzystują komponenty do dynamicznego wyświetlania zawartości:
+
+-   `content/bio/index.mdx` (strona **ABOUT**)
+-   `content/sup_pages/projects.mdx` (strona **PROJECTS**)
+-   `content/sup_pages/publications.mdx` (strona **PUBLICATIONS**)
+-   `content/sup_pages/teaching.mdx` (strona **TEACHING**)
+
+Oto jak wygląda przykładowy plik (`content/sup_pages/projects.mdx`), który używa komponentów:
+
+```mdx
+---
+id: projects
+title: Projects
+---
+
+import ProjectList from '@components/ProjectList.astro';
+import SearchBar from '@components/SearchBar.astro';
+
+<div class="title-with-search">
+# Projects
+<div class="search-wrapper">
+<SearchBar />
+</div>
+</div>
+
+<ProjectList />
+```
+
+![Przykład pliku z komponentem Astro](images/file-with-astro-component.png)
+
+#### Objaśnienie użytych komponentów
+
+Oto lista komponentów, których użyto w powyższych plikach, wraz z wyjaśnieniem ich funkcji:
+
+-   **`<CvButton text="Pobierz CV" file="documents/cv.pdf" />`**
+    -   **Gdzie:** `content/bio/index.mdx`
+    -   **Co robi:** Wyświetla przycisk, który pozwala użytkownikowi pobrać CV.
+    -   **Wymagane parametry:**
+        -   `text`: Tekst, który pojawi się na przycisku (np. "Pobierz CV").
+        -   `file`: Ścieżka do pliku CV w folderze `public/` (np. "documents/cv.pdf").
+
+-   **`<SearchBar />`**
+    -   **Gdzie:** `content/sup_pages/projects.mdx` i `content/sup_pages/publications.mdx`
+    -   **Co robi:** Tworzy pole do wyszukiwania, które pozwala filtrować listę projektów lub publikacji po wpisaniu szukanej frazy. Nie wymaga dodatkowych parametrów.
+
+-   **`<ProjectList />`**
+    -   **Gdzie:** `content/sup_pages/projects.mdx`
+    -   **Co robi:** Automatycznie generuje i wyświetla listę wszystkich projektów (zarówno bieżących, jak i archiwalnych) na podstawie plików `.mdx` z folderu `content/projects/`. Nie wymaga dodatkowych parametrów.
+
+-   **`<PublicationList />`**
+    -   **Gdzie:** `content/sup_pages/publications.mdx`
+    -   **Co robi:** Działa analogicznie do `ProjectList`, ale tworzy listę publikacji na podstawie plików z folderu `content/publications/`. Nie wymaga dodatkowych parametrów.
+
+-   **`<TeachingTile title="Dydaktyka" />`**
+    -   **Gdzie:** `content/sup_pages/teaching.mdx`
+    -   **Co robi:** Wyświetla specjalnie sformatowany blok (kafelek) z informacjami na temat dydaktyki.
+    -   **Wymagane parametry:**
+        -   `title`: Główny tytuł kafelka, który będzie wyświetlać się jako jego nagłówek
+
+
+#### Ważne!
+
+Komponenty muszą być zapisane w nienaruszonej formie, np. `<ProjectList />`. Jakakolwiek zmiana w ich nazwie lub strukturze (np. usunięcie nawiasów `< >` lub ukośnika `/`) spowoduje błąd.
+
+**Równie ważne jest podanie wszystkich wymaganych parametrów.** Jeśli komponent oczekuje parametru (np. `text` w `<CvButton />`), a nie zostanie on podany, strona również się nie zbuduje, a system **GitHub** zgłosi błąd.
+
+#### Uwaga dotycząca plików `projects.mdx` i `publications.mdx`
+
+W plikach tych, oprócz komponentów Astro, możesz zauważyć dodatkowe znaczniki `<div>`. Są to elementy strukturalne, które zapewniają prawidłowe ułożenie komponentów na stronie. Ich struktura również nie powinna być naruszana.
+
+**Nie musisz się jednak tym przejmować.** Pliki te zostały zaprojektowane tak, aby nie wymagały żadnych zmian. Aby dodać nowy projekt lub publikację, wystarczy dodać odpowiedni plik `.mdx` w folderze `content/projects/` lub `content/publications/`, co zostało opisane w [Kroku 2](2-zarzadzanie-trescia.md). Komponenty `<ProjectList />` i `<PublicationList />` automatycznie zajmą się resztą.
+
+> Więcej o tym, jak radzić sobie z ewentualnymi błędami, przeczytasz w dokumencie [Krok 4: Publikacja Zmian](4-publikacja-zmian.md).

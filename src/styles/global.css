@@ -321,3 +321,8 @@ html[data-theme='light'] {
     font-size: calc(0.3rem + 0.7vw);
   }
 }
+
+/* Force text color for prose content */
+.prose :where(h1, h2, h3, h4, h5, h6, p, a, ul, ol, li, strong, em):not(:where([class~="not-prose"] *)) {
+  color: var(--text) !important;
+}
