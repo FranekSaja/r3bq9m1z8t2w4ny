@@ -62,31 +62,31 @@ Najnowsza zmiana jest widoczna od razu na głównej stronie projektu w sekcji **
 - **Zielony "ptaszek"** oznacza, że wszystko przebiegło pomyślnie, a zmiany są już widoczne na stronie.
 - **Czerwony "krzyżyk"** oznacza, że wystąpił błąd.
 
-Informacja o poprawnie przeprowadzonej publikacji zmian:
+Informacja o poprawnie przeprowadzonej aktualizacji:
 ![Widok poprawnie wdrożonej zmiany na stronie projektu](images/repo-dashbord-screen.png)
-Informacja o błędzie w publikacji:
+Informacja o błędzie w publikacji zmian:
 ![Błąd budowania widoczny na stronie projektu](images/github-build-error.png)
 
 ---
 
-### Historia i szczegóły publikacji (zakładka Actions)
+### Historia i szczegóły aktualizacji (zakładka Actions)
 
-Pełną historię wszystkich publikacji – zarówno tych udanych, jak i nieudanych – znajdziesz w zakładce **Actions**.
+Pełną historię wszystkich aktualizacji kodu – zarówno tych udanych, jak i nieudanych – znajdziesz w zakładce **Actions**.
 
-![Zakładka Actions z listą poprzednich wdrożeń](images/github-actions-screen.png)
+![Zakładka Actions z listą poprzednich publikacji](images/github-actions-screen.png)
 
-Po kliknięciu w konkretną zmianę (konkretny commit) zobaczysz podsumowanie danego wdrożenia.
+Po kliknięciu w konkretną zmianę (konkretny commit) zobaczysz podsumowanie danej aktualizacji.
 
-![Podsumowanie konkretnego wdrożenia](images/deployment-summary-screen.png)
+![Podsumowanie konkretnej aktualizacji](images/deployment-summary-screen.png)
 
 ---
 
-### Dwa etapy wdrożenia: Build i Deploy
+### Dwa etapy aktualizacji: Build i Deploy
 
 Każda zmiana przechodzi przez dwa główne etapy:
 
 1.  **Build (Budowanie)**: W tym kroku serwer "czyta" wszystkie pliki projektu (w tym pliki `.mdx` z treścią) i na ich podstawie buduje finalną wersję strony.
-2.  **Deploy (Wdrożenie)**: Gotowa strona jest umieszczana na serwerze, dzięki czemu staje się publicznie dostępna.
+2.  **Deploy (Publikacja)**: Gotowa strona jest umieszczana na serwerze, dzięki czemu staje się publicznie dostępna.
 
 **Ważne:** Jeśli edytujesz **tylko treść** (pliki `.mdx`), ewentualne błędy mogą pojawić się **tylko na etapie "Build"**. Najczęściej wynikają one z nieprawidłowej struktury metadanych (np. brak cudzysłowu, literówka w nazwie pola). Nie musisz w takim przypadku przejmować się etapem "Deploy".
 
