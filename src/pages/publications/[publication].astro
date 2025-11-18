@@ -20,8 +20,8 @@ const { Content } = await entry.render();
       <header>
         <h1 class="project-title mb-4">{entry.data.title}</h1>
         <div class="text-xl text-text font-semibold mt-2 mb-8">
-          <p>author: {entry.data.author}</p>
-          <p>publication date: {new Date(entry.data.publicationDate).toLocaleDateString(entry.data.lang, { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          <p class="opacity-70 mb-0">{entry.data.author}</p>
+          <p class="opacity-70">{new Date(entry.data.publicationDate).toLocaleDateString(entry.data.lang, { year: 'numeric', month: 'long', day: 'numeric' })}</p>
         </div>
       </header>
 
