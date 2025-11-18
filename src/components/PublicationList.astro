@@ -18,7 +18,7 @@ const englishPublications = publications.filter(p => p.data.lang === 'en');
         <span>Publikacje polskie</span>
       </h2>
       <div class="list-container">
-        <ul class="publication-list">
+        <ul class="publication-list not-prose">
           {polishPublications.map((publication) => (
           <li class="publication-item">
             <a href={path.join(baseUrl, 'publications', publication.slug)} class="publication-link">
@@ -44,7 +44,7 @@ const englishPublications = publications.filter(p => p.data.lang === 'en');
         <span>Publikacje angielskie</span>
       </h2>
       <div class="list-container">
-        <ul class="publication-list">
+        <ul class="publication-list not-prose">
           {englishPublications.map((publication) => (
           <li class="publication-item">
             <a href={path.join(baseUrl, 'publications', publication.slug)} class="publication-link">

@@ -18,7 +18,7 @@ const pastProjects = projects.filter(p => p.data.status === 'past');
         <span>Current Projects</span>
       </h2>
       <div class="list-container">
-        <ul class="project-list">
+        <ul class="project-list not-prose">
           {currentProjects.map((project) => (
             <li class="project-item">
               <a href={path.join(baseUrl, 'projects', project.slug)} class="project-link">
@@ -50,7 +50,7 @@ const pastProjects = projects.filter(p => p.data.status === 'past');
         <span>Past Projects</span>
       </h2>
       <div class="list-container">
-        <ul class="project-list">
+        <ul class="project-list not-prose">
           {pastProjects.map((project) => (
             <li class="project-item">
               <a href={path.join(baseUrl, 'projects', project.slug)} class="project-link">
