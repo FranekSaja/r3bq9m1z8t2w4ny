@@ -92,7 +92,7 @@ Zero instalacji żadnych programów na komputerze, wszystko z przeglądarki.
 
 ---
 
-1.  Tak samo jak w pierwszej opcji, trzeba założyć konto na GitHubie i wejść do repozytorium z kodem strony (patrz na samej górze).
+1.  Tak samo jak w pierwszej opcji, musisz założyć konto na GitHubie i wejść do repozytorium z kodem strony (patrz na samej górze).
 
 ---
 
@@ -116,14 +116,17 @@ Zero instalacji żadnych programów na komputerze, wszystko z przeglądarki.
 
 ---
 
-6.  Teraz musisz zalogować się swoim loginem i hasłem do serwisu GitHub:
+6.  Teraz zaloguj się swoim loginem i hasłem do serwisu GitHub:
     ![Logowanie do GitHub w VS Code](images/login-vs-code-github.png)
 
 ---
 
-7.  Możliwe, że repozytorium nie skopiuje się od razu. Wtedy trzeba powtórzyć cały proces. Jeszcze raz kliknij „Otwórz repozytorium zdalne”.
+7.  Możliwe, że repozytorium nie skopiuje się od razu. Wtedy trzeba powtórzyć cały proces. Jeszcze raz kliknij „Otwórz repozytorium zdalne”:
+
     ![Klonowanie repozytorium online](images/clone-repo-online.png)
-    W okienku, które pojawi się na górze, trzeba kliknąć „Otwórz repozytorium GitHub”. Wtedy pojawi się lista repozytoriów przypisanych do konta, na które się zalogowałeś. Wybierz swoje repozytorium. Proces klonowania plików potrwa około minuty.
+
+
+ W okienku, które pojawi się na górze, wybierz „Otwórz repozytorium GitHub”. Pojawi się lista repozytoriów przypisanych do konta, na które się zalogowałeś. Wybierz swoje repozytorium. Proces klonowania plików potrwa około minuty.
 
 ---
 
@@ -132,7 +135,7 @@ Zero instalacji żadnych programów na komputerze, wszystko z przeglądarki.
 
 ---
 
-9.  Teraz coś, co ułatwi Ci pracę. VS Code Online nie podświetla wszystkich plików MDX automatycznie, a kolorowy tekst to coś, co znacznie ułatwi Ci pracę. Aby tekst w plikach MDX podświetlał się na kolorowo, musisz pobrać wtyczkę. Otwórz zakładkę Extensions w lewym menu:
+9.  Teraz coś, co ułatwi Ci pracę. VS Code Online nie podświetla plików MDX automatycznie, a kolorowy tekst to coś, co znacznie ułatwi Ci czytanie plików MDX. Aby tekst w plikach MDX podświetlał się na kolorowo, musisz pobrać odpowiednią wtyczkę. Otwórz zakładkę Extensions w lewym menu:
     ![Panel rozszerzeń VS Code](images/vs-code-ext-panel.png)
     Wyszukaj frazę „mdx”. Następnie wybierz wtyczkę o nazwie „MDX Inline”.
     ![Wtyczka MDX Inline](images/vs-code-mdx-ext.png)
