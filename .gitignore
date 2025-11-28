@@ -21,3 +21,4 @@ node_modules/.astro/
 .idea/
 *.log
 coverage/
+.DS_Store
