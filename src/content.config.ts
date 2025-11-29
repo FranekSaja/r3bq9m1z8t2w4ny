@@ -73,7 +73,7 @@ const publications = defineCollection({
     journalLink: z.string().url().optional(),
     pdfFile: z.string().optional(),
     keywords: z.array(z.string()),
-    publicationDate: z.string(),
+    publicationDate: z.coerce.date(),
     lang: z.enum(['pl', 'en']),
   })
 });

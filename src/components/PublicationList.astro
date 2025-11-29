@@ -1,13 +1,15 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import path from "path-browserify";
 import { Icon } from "astro-icon/components";
 
 const publications = await getCollection("publications");
 const baseUrl = import.meta.env.BASE_URL;
 
-const polishPublications = publications.filter((p) => p.data.lang === "pl");
-const englishPublications = publications.filter((p) => p.data.lang === "en");
+const sortPublications = (a: CollectionEntry<'publications'>, b: CollectionEntry<'publications'>) => b.data.publicationDate.getTime() - a.data.publicationDate.getTime();
+
+const polishPublications = publications.filter((p) => p.data.lang === "pl").sort(sortPublications);
+const englishPublications = publications.filter((p) => p.data.lang === "en").sort(sortPublications);
 ---
 
 <div class="relative-container">

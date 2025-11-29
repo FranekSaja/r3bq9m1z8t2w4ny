@@ -9,6 +9,21 @@ const {
 } = Astro.props as Props;
 import '../styles/global.css';
 import MenuBar from "../components/MenuBar.astro";
+
+const baseUrl = import.meta.env.BASE_URL;
+const currentPagePath = Astro.url.pathname;
+let logoText = 'Maciej Witek';
+
+// Sprawdza, czy bieżąca ścieżka jest stroną główną
+const isHomePage = currentPagePath === baseUrl || currentPagePath === `${baseUrl}/`;
+
+if (!isHomePage) {
+  const pathSegments = currentPagePath.replace(baseUrl, '').split('/').filter(Boolean);
+  const section = pathSegments[0]; // Bierzemy pierwszy segment jako nazwę sekcji
+  if (section) {
+    logoText += ` - ${section.charAt(0).toUpperCase() + section.slice(1)}`;
+  }
+}
 ---
 <html lang="pl" class="scroll-smooth">
   <head>
@@ -24,7 +39,7 @@ import MenuBar from "../components/MenuBar.astro";
   <body class="min-h-screen antialiased">
     <div class="background-container"></div>
     <header class="top-bar">
-      <a href={import.meta.env.BASE_URL} class="logo">Maciej Witek - Official site</a>
+      <a href={import.meta.env.BASE_URL} class="logo">{logoText}</a>
       <MenuBar currentPage={Astro.url.pathname} />
     </header>
     <main class="main-content slide-in">

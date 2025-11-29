@@ -36,7 +36,10 @@ const publications = await getCollection('publications', ({ slug }) => {
           {(entry.data.start_date || entry.data.end_date) && (
             <div>
               <dt class="font-semibold">Dates</dt>
-              <dd>{entry.data.start_date} - {entry.data.end_date}</dd>
+              <dd>
+                {entry.data.start_date ? new Date(entry.data.start_date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : ''} -
+                {entry.data.end_date ? new Date(entry.data.end_date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : ''}
+              </dd>
             </div>
           )}
           {entry.data.investigators && (
